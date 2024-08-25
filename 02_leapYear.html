@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leap Year</title>
+  <style>
+    main{
+      width: 600px;
+      background-color: rgb(187, 197, 201);
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    #result{
+      width: 400px;
+      /* padding: 10px; */
+      border-radius: 10px;
+      height: 0,30px;
+      margin: auto;
+      text-align: center;
+
+    }
+    .info {
+      width: 400px;
+      background-color: rgb(135, 149, 153);
+      padding: 10px;
+      border-radius: 10px;
+      color: rgb(39, 39, 39);
+      margin: auto;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <h2>閏年判斷器</h2>
+    <label for="year">西元</label>
+    <input type="number" id="year" placeholder="請輸入西元年">
+
+    <button onclick="year()">送出</button>
+    <br><br>
+    <div id="result"></div><br>
+  
+    <div class="info">
+      <div>
+        <ul>西元年條件
+          <li>可整除400</li>
+          <li>可整除4,但100不可整除</li>
+        </ul>
+      </div>
+  
+      <hr>
+      <div>
+        <ul>條件符合卻不是閏年的特殊年份:
+          <li>
+            1700年,1800年,1900年,2100年、2200年、2300年...
+  
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  </main>
+  
+
+  <script>
+    function year() {
+      const y = parseInt(document.getElementById('year').value);
+      let result = '';
+
+      if (!y) {
+        result = "請輸入有效年份";
+      } else if (y % 400 === 0 || (y % 4 === 0 && y % 100 !== 0)) {
+        result = `${y}年是閏年`;
+
+      } else {
+        result = `${y}年是平年`;
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+
+</body>
+
+</html>

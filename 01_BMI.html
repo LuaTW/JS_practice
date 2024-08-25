@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI</title>
+</head>
+
+<body>
+  <!-- bmi公式=體重(公斤)/身高(公尺)**2 -->
+
+  <h2>BMI</h2>
+  <label for="height">身高(公尺)</label>
+  <input type="number" id="height" placeholder="請輸入身高"><br>
+  <label for="weight">體重(公斤)</label>
+  <input type="number" name="weight" id="weight" placeholder="請輸入體重"><br>
+  <br>
+  <button onclick="bmi()">送出</button>
+  <br>
+  <br>
+  <span id="result"></span>
+
+  <script>
+    function bmi() {
+      const h = document.getElementById('height').value;
+      const w = document.getElementById('weight').value;
+
+      // 世界上最高的人:272cm;世界上最胖的人:597kg
+
+      if (h > 0 && h<=3 && w > 0 && w <=600) {
+        const bmi = w / (h * h);
+        let status; //WHY
+
+        if (bmi < 18.5) {
+          status = "過輕";
+
+        } else if (18.5 <= bmi && bmi < 24) {
+          status = "正常"
+
+        } else if (24 <= bmi && bmi < 27) {
+          status = "過重";
+
+        } else if (27 <= bmi && bmi < 30) {
+          status = "輕度肥胖";
+
+        } else if (30 <= bmi && bmi < 35) {
+          status = "中度肥胖";
+
+        } else if (bmi >= 35) {
+          status = "重度肥胖";
+        }
+
+        document.getElementById('result').innerText = `您的BMI為 ${bmi.toFixed(2)}，體重"${status}"。`;
+        // 加入.toFixed(2): 取到小數點後第二位
+
+      } else {
+        document.getElementById('result').innerText = '請輸入有效的身高和體重';
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
