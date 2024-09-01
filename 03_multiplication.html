@@ -10,7 +10,8 @@
             /* border欄位合併 */
         }
 
-        td, th {
+        td,
+        th {
             border: 1px solid black;
             padding: 15px;
             text-align: center;
@@ -21,25 +22,12 @@
 <body>
     <h2>九九乘法表</h2>
     <table id="multiplication-table"></table>
-
     <script>
-        // function generateTable() {
-        //     let table = document.getElementById("multiplication-table");
-        //     for (let i = 1; i <= 9; i++) {
-        //         let row = table.insertRow(-1); // 在表格末尾插入一行
-        //         for (let j = 1; j <= 9; j++) {
-        //             let cell = row.insertCell(-1); // 在行末尾插入单元格
-        //             cell.innerHTML = `${i} x ${j} = ${i * j}`; // 计算并填充内容
-        //         }
-        //     }
-        // }
-
-        // generateTable(); // 调用函数，生成九九乘法表------------------------
-
+// 無法理解 "let row = table.insertRow(-1);" 為何小括號內是-1?測試不填的話並無影響,0的話會變成9*1=...;1的話內容會無法顯示
         function generateTable() {
             let table = document.getElementById("multiplication-table");
             for (let i = 1; i <= 9; i++) { // 每列9個
-                let row = table.insertRow(-1); // 添加新的一行
+                let row = table.insertRow(); // 添加新的一行
                 for (let j = 1; j <= 9; j++) { //每行9個
                     let cell = row.insertCell(-1);
                     cell.innerHTML = `${j} x ${i} = ${i * j}`
