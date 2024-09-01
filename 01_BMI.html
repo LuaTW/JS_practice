@@ -30,7 +30,7 @@
 
       if (h > 0 && h<=3 && w > 0 && w <=600) {
         const bmi = w / (h * h);
-        let status; //WHY
+        let status; // let:塊級作用 只在bmi函數內部可用。 
 
         if (bmi < 18.5) {
           status = "過輕";

@@ -1,38 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-hant">
+<html lang="zh-hant-TW">
 <head>
-<meta charset="UTF-8">
-<title>九九乘法表</title>
-<style>
-    table {
-        border-collapse: collapse; /* 确保表格无间隔 */
-        width: 50%;
-    }
-    td, th {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: center;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
 </head>
 <body>
-<h2>九九乘法表</h2>
-<table id="multiplication-table"></table>
-
-<script>
-function generateTable() {
-    let table = document.getElementById("multiplication-table");
-    for (let i = 1; i <= 9; i++) {
-        let row = table.insertRow(-1); // 在表格末尾插入一行
-        for (let j = 1; j <= 9; j++) {
-            let cell = row.insertCell(-1); // 在行末尾插入单元格
-            cell.innerHTML = `${i} x ${j} = ${i * j}`; // 计算并填充内容
-        }
-    }
-}
-
-generateTable(); // 调用函数，生成九九乘法表
-</script>
+    
 </body>
 </html>
-
